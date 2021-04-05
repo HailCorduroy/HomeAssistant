@@ -19,7 +19,7 @@
 - platform: group
   name: Studio Desk
   entities:
-    - light.light.ll_desk
-    - light.light.lr_desk    
-    - light.light.ul_desk
-    - light.light.ur_desk
+    - light.ll_desk
+    - light.lr_desk    
+    - light.ul_desk
+    - light.ur_desk
