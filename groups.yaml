@@ -1,8 +1,1 @@
-# Example configuration.yaml entry
 
-- platform: group
-  name: Den Lamps
-  entities:
-    - light.den_lamp_left
-    - light.den_lamp_right
-      
