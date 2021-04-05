@@ -4,3 +4,22 @@
     - light.den_lamp_left
     - light.den_lamp_right
 
+- platform: group
+  name: Kitchen
+  entities:
+    - light.kitchen_accent
+    - light.kitchen_accent_2
+
+- platform: group
+  name: Bedroom Lamps
+  entities:
+    - light.katie_s_lamp
+    - light.jeff_s_lamp
+    
+- platform: group
+  name: Studio Desk
+  entities:
+    - light.light.ll_desk
+    - light.light.lr_desk    
+    - light.light.ul_desk
+    - light.light.ur_desk
