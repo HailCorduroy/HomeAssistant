@@ -5,6 +5,12 @@
     - light.den_lamp_right
 
 - platform: group
+  name: TV Accent
+  entities:
+    - light.tv_left
+    - light.tv_right    
+
+- platform: group
   name: Kitchen
   entities:
     - light.kitchen_accent
@@ -23,3 +29,10 @@
     - light.lr_desk    
     - light.ul_desk
     - light.ur_desk
+    
+- platform: group
+  name: Studio Lamps
+  entities:
+    - light.studio_lamp_l
+    - light.studio_lamp_r  
+
