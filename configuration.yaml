@@ -7,7 +7,7 @@ tts:
   - platform: google_translate
 
 frontend:
-  themes: !include_dir_merge_named my_themes
+  themes: !include themes.yaml
   
 group: !include groups.yaml
 automation: !include automations.yaml
