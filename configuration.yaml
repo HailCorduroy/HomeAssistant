@@ -6,12 +6,15 @@ default_config:
 tts:
   - platform: google_translate
 
+frontend:
+  themes: !include_dir_merge_named my_themes
+  
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 light: !include lights.yaml
-themes: !include_dir_merge_named my_themes
+
 
 sensor: 
   - platform: systemmonitor
