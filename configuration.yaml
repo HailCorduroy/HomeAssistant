@@ -17,7 +17,7 @@ sensor:
     resources:
       - type: disk_use_percent
         arg: /config
-      - type: memory_free
+      - type: memory_use
       - type: processor_use
       - type: processor_temperature
       - type: last_boot
