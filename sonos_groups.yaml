@@ -1,0 +1,10 @@
+- entity_id: media_player.den
+  name: Sonos TV
+- entity_id: media_player.dining_room
+  name: Sonos Dining Room
+- entity_id: media_player.katies_office
+  name: Sonos Katie's Office
+- entity_id: media_player.jeffs_office
+  name: Sonos Jeff's Office
+- entity_id: media_player.bedroom
+  name: Sonos Bedroom
