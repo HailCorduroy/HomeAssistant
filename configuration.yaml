@@ -27,6 +27,6 @@ sensor:
       - type: last_boot
       
   - platform: scrape
-    resource: !secret.tsa_wait_url
-    select: !secrets.tsa_wait_selector
+    resource: !secret tsa_wait_url
+    select: !secret tsa_wait_selector
     name: TSA Wait Time
