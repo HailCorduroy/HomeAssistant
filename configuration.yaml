@@ -32,5 +32,6 @@ sensor:
     name: TSA Wait Time
     
   - platform: moon
+  
   - platform: season
-      - type: astronomical
+    type: astronomical
