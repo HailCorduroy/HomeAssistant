@@ -30,3 +30,7 @@ sensor:
     resource: !secret tsa_wait_url
     select: !secret tsa_wait_selector
     name: TSA Wait Time
+    
+  - platform: moon
+  - platform: season
+      - type: astronomical
