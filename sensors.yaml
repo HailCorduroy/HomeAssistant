@@ -1,31 +1,31 @@
 #system monitor stats
 - platform: systemmonitor
-    resources:
-      - type: disk_use_percent
-        arg: /config
-      - type: memory_use
-      - type: processor_use
-      - type: processor_temperature
-      - type: last_boot
+  resources:
+    - type: disk_use_percent
+      arg: /config
+    - type: memory_use
+    - type: processor_use
+    - type: processor_temperature
+    - type: last_boot
 
 - platform: scrape
-    resource: !secret tsa_wait_url
-    select: !secret tsa_wait_selector
-    name: TSA Wait Time
+  resource: !secret tsa_wait_url
+  select: !secret tsa_wait_selector
+  name: TSA Wait Time
 
 - platform: moon
 
 - platform: season
-    type: astronomical
+  type: astronomical
 
 - platform: template
-    sensors:
+  sensors:
     speedtest_last_updated:
-        friendly_name: "Last Updated"
-        value_template: "{{ as_timestamp(states.sensor.speedtest_download.last_updated) | timestamp_custom('%I:%M %p %Z') }}"  
+      friendly_name: "Last Updated"
+      value_template: "{{ as_timestamp(states.sensor.speedtest_download.last_updated) | timestamp_custom('%I:%M %p %Z') }}"  
 
 - platform: template
-    sensors:
-      bedroom_motion_battery:
-        friendly_name: "Bedroom Motion Sensor Battery"
-        value_template: "{{ state_attr(binary_sensor.bedroom_sensor_motion, battery_level) | int }}"
+  sensors:
+    bedroom_motion_battery:
+      friendly_name: "Bedroom Motion Sensor Battery"
+      value_template: "{{ state_attr(binary_sensor.bedroom_sensor_motion, battery_level) | int }}"
