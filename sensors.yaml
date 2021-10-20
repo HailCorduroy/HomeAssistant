@@ -13,7 +13,6 @@
   unit_of_measurement: minutes
 - platform: version
   source: hassio  
-- platform: authenticated
 
 - platform: template
   sensors:
