@@ -29,3 +29,9 @@
     bedroom_motion_battery:
       friendly_name: "Bedroom Motion Sensor Battery"
       value_template: "{{ state_attr('binary_sensor.bedroom_sensor_motion', 'battery_level') | int }}"
+    kitchen_motion_battery:
+      friendly_name: "Kitchen Motion Sensor Battery"
+      value_template: "{{ state_attr('binary_sensor.kitchen_sensor_motion', 'battery_level') | int }}"
+    studio_motion_battery:
+      friendly_name: "Studio Motion Sensor Battery"
+      value_template: "{{ state_attr('binary_sensor.bedroom_sensor_motion', 'battery_level') | int }}"
