@@ -1,3 +1,4 @@
+# system monitor
 - platform: systemmonitor
     resources:
       - type: disk_use_percent
@@ -6,8 +7,16 @@
       - type: processor_use
       - type: processor_temperature
       - type: last_boot
-      
+  
+# TSA Wait time
 - platform: scrape
   resource: !secret.tsa_wait_url
   select: !secrets.tsa_wait_selector
   name: TSA Wait Time
+
+# Speedtest 
+- platform: template
+  sensors:
+    speedtest_last_updated:
+      friendly_name: "Last Updated"
+      value_template: "{{ as_timestamp(states.sensor.speedtest_download.last_updated) | timestamp_custom('%I:%M %p %Z') }}"
