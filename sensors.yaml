@@ -1,12 +1,12 @@
 #system monitor stats
 - platform: systemmonitor
   resources:
-    - type: disk_use_percent
+  - type: disk_use_percent
       arg: /config
-    - type: memory_use
-    - type: processor_use
-    - type: processor_temperature
-    - type: last_boot
+  - type: memory_use
+  - type: processor_use
+  - type: processor_temperature
+  - type: last_boot
 
 - platform: scrape
   resource: !secret tsa_wait_url
