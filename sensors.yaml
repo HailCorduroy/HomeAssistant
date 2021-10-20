@@ -1,4 +1,4 @@
-#system monitor stats
+#Home Assistant and Server
 - platform: systemmonitor
   resources:
   - type: disk_use_percent
@@ -7,16 +7,13 @@
   - type: processor_use
   - type: processor_temperature
   - type: last_boot
-
-- platform: scrape
-  resource: !secret tsa_wait_url
-  select: !secret tsa_wait_selector
-  name: TSA Wait Time
-
-- platform: moon
-
-- platform: season
-  type: astronomical
+  
+- platform: uptime
+  name: HA Uptime
+  unit_of_measurement: minutes
+- platform: version
+  source: hassio  
+- platform: authenticated
 
 - platform: template
   sensors:
@@ -24,6 +21,20 @@
       friendly_name: "Last Updated"
       value_template: "{{ as_timestamp(states.sensor.speedtest_download.last_updated) | timestamp_custom('%I:%M %p %Z') }}"  
 
+# TSA Wait Time
+- platform: scrape
+  resource: !secret tsa_wait_url
+  select: !secret tsa_wait_selector
+  name: TSA Wait Time
+
+# Weather
+- platform: moon
+
+- platform: season
+  type: astronomical
+
+
+#Motion Sensor Battery Levels
 - platform: template
   sensors:
     bedroom_motion_battery:
@@ -35,3 +46,4 @@
     studio_motion_battery:
       friendly_name: "Studio Motion Sensor Battery"
       value_template: "{{ state_attr('binary_sensor.bedroom_sensor_motion', 'battery_level') | int }}"
+
