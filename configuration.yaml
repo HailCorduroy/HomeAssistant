@@ -15,7 +15,7 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 light: !include lights.yaml
 
-
+# Sensors
 sensor: 
   - platform: systemmonitor
     resources:
@@ -35,6 +35,12 @@ sensor:
   
   - platform: season
     type: astronomical
+    
+  - platform: template
+    sensors:
+      speedtest_last_updated:
+        friendly_name: "Last Updated"
+        value_template: "{{ as_timestamp(states.sensor.speedtest_download.last_updated) | timestamp_custom('%I:%M %p %Z') }}"  
     
 speedtestdotnet:
   scan_interval: '00:30:00'
