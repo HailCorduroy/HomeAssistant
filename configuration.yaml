@@ -46,7 +46,7 @@ sensor:
   - platform: template
     sensors:
       bedroom_motion_battery:
-        friendly_name: Bedroom Motion Battery Level
+        friendly_name: 'Bedroom Motion Sensor Battery'
         value_template: '{{ state_attr('binary_sensor.bedroom_sensor_motion', 'battery_level')|int }}'
     
 speedtestdotnet:
