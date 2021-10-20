@@ -2,7 +2,7 @@
 - platform: systemmonitor
   resources:
   - type: disk_use_percent
-      arg: /config
+    arg: /config
   - type: memory_use
   - type: processor_use
   - type: processor_temperature
