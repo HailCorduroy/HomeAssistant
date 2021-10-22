@@ -10,3 +10,13 @@
       turn_off:
         service: switch.turn_off
         entity_id: switch.update_speedtest
+
+- platform: rest
+  resource: http://192.168.7.75/api/oqu4julN33mykLvde20X50-KyTh1cZ8hdp0vW5GM/sensors/8/
+  name: 'Studio Motion Sensor'
+  method: put
+  body_on: '{"config": {"on":true}}'
+  body_off: '{"config": {"on":false}}'
+  is_on_template: '{{ value_json.config.on == true }}'
+  headers:
+    Content-Type: application/json
