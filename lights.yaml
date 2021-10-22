@@ -35,6 +35,14 @@
   entities:
     - light.studio_lamp_l
     - light.studio_lamp_r  
+    
+- platform: group
+  name: Studio Accents
+  entities:
+    - light.corner_play
+    - light.corner_strip
+    - light.studio_corner_lamp
+    - light.studio_entry_table
   
 - platform: group
   name: Katie Office
