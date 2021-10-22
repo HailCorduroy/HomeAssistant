@@ -56,4 +56,17 @@
     studio_motion_battery:
       friendly_name: "Studio Motion Sensor Battery"
       value_template: "{{ state_attr('binary_sensor.bedroom_sensor_motion', 'battery_level') | int }}"
+    last_motion:
+      friendly_name: 'Last Motion'
+      value_template: >
+        {%- set sensors = [states.binary_sensor.bedroom_sensor_motion, states.binary_sensor.kitchen_sensor_motion, states.binary_sensor.bedroom_sensor_motion] %}
+        {% for sensor in sensors %}
+          {% if as_timestamp(sensor.last_changed) == as_timestamp(sensors | map(attribute='last_changed') | max) %}
+            {{ sensor.name }}
+          {% endif %}
+        {% endfor %}
 
+  
+# Last Seen Motion Sensor
+
+  
