@@ -58,7 +58,7 @@
       value_template: "{{ state_attr('binary_sensor.bedroom_sensor_motion', 'battery_level') | int }}"
     bedroom_last_motion:
       friendly_name: 'Bedroom Last Motion'
-      value_template: "{{ states.sensor.binary_sensor.bedroom_sensor_motion.last_changed }}"
+      value_template: "{{ states.binary_sensor.bedroom_sensor_motion.last_changed }}"
         
   
 # Last Seen Motion Sensor
