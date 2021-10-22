@@ -11,6 +11,7 @@
         service: switch.turn_off
         entity_id: switch.update_speedtest
 
+# Hue Motion Sensors
 - platform: rest
   resource: http://192.168.7.75/api/oqu4julN33mykLvde20X50-KyTh1cZ8hdp0vW5GM/sensors/8/
   name: 'Studio Motion Sensor'
@@ -20,3 +21,24 @@
   is_on_template: '{{ value_json.config.on == true }}'
   headers:
     Content-Type: application/json
+
+- platform: rest
+  resource: http://192.168.7.75/api/oqu4julN33mykLvde20X50-KyTh1cZ8hdp0vW5GM/sensors/21/
+  name: 'Bedroom Motion Sensor'
+  method: put
+  body_on: '{"config": {"on":true}}'
+  body_off: '{"config": {"on":false}}'
+  is_on_template: '{{ value_json.config.on == true }}'
+  headers:
+    Content-Type: application/json
+    
+- platform: rest
+  resource: http://192.168.7.75/api/oqu4julN33mykLvde20X50-KyTh1cZ8hdp0vW5GM/sensors/53/
+  name: 'Kitchen Motion Sensor'
+  method: put
+  body_on: '{"config": {"on":true}}'
+  body_off: '{"config": {"on":false}}'
+  is_on_template: '{{ value_json.config.on == true }}'
+  headers:
+    Content-Type: application/json
+    
