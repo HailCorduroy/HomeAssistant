@@ -55,10 +55,19 @@
       value_template: "{{ state_attr('binary_sensor.kitchen_sensor_motion', 'battery_level') | int }}"
     studio_motion_battery:
       friendly_name: "Studio Motion Sensor Battery"
-      value_template: "{{ state_attr('binary_sensor.bedroom_sensor_motion', 'battery_level') | int }}"
+      value_template: "{{ state_attr('binary_sensor.my_office_sensor_motion', 'battery_level') | int }}"
     bedroom_last_motion:
       friendly_name: 'Bedroom Last Motion'
       value_template: "{{ states.binary_sensor.bedroom_sensor_motion.last_changed }}"
+      device_class: timestamp
+    kitchen_last_motion:
+      friendly_name: 'Kitchen Last Motion'
+      value_template: "{{ states.binary_sensor.kitchen_sensor_motion.last_changed }}"
+      device_class: timestamp      
+    studio_last_motion:
+      friendly_name: 'Studio Last Motion'
+      value_template: "{{ states.binary_sensor.my_office_sensor_motion.last_changed }}"
+      device_class: timestamp      
         
   
 # Last Seen Motion Sensor
