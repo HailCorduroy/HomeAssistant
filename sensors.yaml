@@ -69,5 +69,7 @@
       value_template: "{{ (states.binary_sensor.my_office_sensor_motion.last_changed).isoformat() }}"
       device_class: timestamp      
 
-
+- platform: mqtt
+  name: "Announcement"
+  state_topic: "HA/Announcement"
   
