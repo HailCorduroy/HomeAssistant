@@ -22,7 +22,8 @@ mqtt:
   broker: 192.168.7.147
   
 speedtestdotnet:
-  scan_interval: '00:30:00'
+  scan_interval:
+    hours: 12
   monitored_conditions:
     - ping
     - download
